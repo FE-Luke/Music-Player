@@ -1,0 +1,528 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: 'Microsoft Yahei';
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#player-ui{
+    transition: all .5s ease;
+    z-index: 1;
+    width: 811px;
+    height: 115px;
+    position: fixed;
+    left: -540px;
+    bottom: 10px;
+}
+#player-ui #play-list{
+    display: none;
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 540px;
+    height: 505px;
+    background: rgb(27,27,27);
+}
+
+#play-list #list-title{
+    background: black;
+    width: 100%;
+    height: 52px;
+    position: relative;
+    border-bottom: 1px solid rgb(38,38,38);
+}
+#list-title span{
+    display: inline-block;
+}
+#play-list #list-title #tab{
+    background: rgb(38,38,38);
+    position: relative;
+    width: 72px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 18px;
+}
+#play-list #list-title #tab i{
+    z-index: 90;
+    width: 15px;
+    height: 8px;
+    background: url('../images/player_bg.png') no-repeat -504px -28px;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -7px;
+    top: 52px;
+}
+#play-list #list-title #clear-list{
+    color: #999;
+    position: absolute;
+    right: 31px;
+    top: 18px;
+    cursor: pointer;
+    font-size: 12px;
+}
+#play-list #list-title #close-list{
+    background: url('../images/player_bg.png') no-repeat -269px -97px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    cursor: pointer;
+}
+
+#play-list #list-main{
+    padding-top: 5px;
+    font-size: 12px;
+    float: left;
+    width: 529px;
+    height: 448px;
+}
+#play-list #list-main ul{
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+}
+#play-list #list-main ul li{float: left}
+#play-list #list-main ul li:nth-child(1){
+    padding-left: 20px;
+    width:254px;
+    color: #999;
+    text-align: left;
+}
+#play-list #list-main .playing li {
+    color: #0cc65b!important;
+}
+#play-list #list-main ul li:nth-child(2){
+    width:180px;
+    color: #595959;
+    text-align: left;
+}
+#play-list #list-main ul li:nth-child(3){
+    width:75px;
+    color: #595959;
+    text-align: center;
+}
+
+#play-list #list-main ul:hover{
+    background: black;
+}
+#play-list #list-main ul:hover > .list-option{
+    z-index: 90;
+    opacity: 1;
+}
+#play-list #list-main ul:hover > li{
+    color: #fff!important;
+}
+
+#play-list #list-main .list-option{
+    opacity: 0;
+    padding: 0!important;
+    background: #000;
+    z-index: -1;
+    position: absolute;
+    top: 4px;
+    right: 17px;
+    width:79px;
+    height: 20px;
+}
+.list-option li{
+    padding: 0!important;
+    display: inline-block;
+    width: 16px!important;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+ }
+
+#play-list #list-main .list-option .list-like{
+    background: url("../images/player_bg.png") no-repeat 0 -127px;
+}
+#play-list #list-main .list-option .list-like:hover{
+    background: url("../images/player_bg.png") no-repeat 0 -145px;
+}
+#play-list #list-main .list-option .list-share{
+    background: url("../images/player_bg.png") no-repeat -16px -127px;
+}
+#play-list #list-main .list-option .list-share:hover{
+    background: url("../images/player_bg.png") no-repeat -16px -145px;
+}
+#play-list #list-main .list-option .list-star{
+    background: url("../images/player_bg.png") no-repeat -64px -127px;
+}
+#play-list #list-main .list-option .list-star:hover{
+    background: url("../images/player_bg.png") no-repeat -64px -145px;
+}
+#play-list #list-main .list-option .list-del{
+    margin: 0!important;
+    background: url("../images/player_bg.png") no-repeat -48px -127px;
+}
+#play-list #list-main .list-option .list-del:hover{
+    background: url("../images/player_bg.png") no-repeat -48px -145px;
+}
+
+#player-ui #player{
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    height: 115px;
+    width: 540px;
+}
+#player #artist-img{
+    float: left;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+}
+#artist-img img{
+    width: 90px;
+    height: 90px;
+}
+
+
+#player #info-main{
+    margin-top: 5px;
+    font-size: 14px;
+    float: left;
+}
+#info-main li{
+    width: 300px;
+    height: 20px;
+    margin:5px 0;
+}
+#info-main #m-info li{
+    line-height: 20px;
+    font-size: 12px;
+}
+#info-main #m-info li:nth-child(1){
+    font-size: 13px;
+}
+#info-main span{
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+}
+#info-main #radio{
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    width: 75px;
+    height: 20px;
+    margin-left: 10px;
+    background: url("../images/player_bg.png") no-repeat -453px -55px;
+}
+#info-main #like-btn{
+    cursor: pointer;
+    background: url("../images/player_bg.png") no-repeat 0 -127px;
+}
+#info-main #like-btn:hover{
+    background: url("../images/player_bg.png") no-repeat 0 -145px;
+}
+#info-main #share-btn{
+    cursor: pointer;
+    background: url("../images/player_bg.png") no-repeat -16px -127px;
+}
+#info-main #share-btn:hover{
+    background: url("../images/player_bg.png") no-repeat -16px -145px;
+}
+#info-main #kok-btn{
+    cursor: pointer;
+    background: url("../images/player_bg.png") no-repeat -96px -127px;
+}
+#info-main #kok-btn:hover{
+    background: url("../images/player_bg.png") no-repeat -81px -145px;
+}
+
+
+#player #control{
+    cursor: default;
+    position: absolute;
+    top: 43px;
+    left: 248px;
+    width: 280px;
+    height: 42px;
+}
+#control span{
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+}
+#control #prev-btn{
+    cursor: pointer;
+    width: 36px;
+    height: 28px;
+    margin: 7px 0 0 3px;
+    background: url("../images/player_bg.png") no-repeat -69px 0;
+}
+#control #prev-btn:hover{
+    background: url("../images/player_bg.png") no-repeat -69px -32px;
+}
+#control #play-btn{
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    margin: 3px;
+}
+#control .play{
+    background: url("../images/player_bg.png") no-repeat -105px -3px;
+}
+#control .play:hover{
+    background: url("../images/player_bg.png") no-repeat -105px -45px;
+}
+#control .pause{
+    background: url("../images/player_bg.png") no-repeat -291px -91px;
+}
+#control .pause:hover{
+    background: url("../images/player_bg.png") no-repeat -333px -91px;
+}
+#control #next-btn{
+    cursor: pointer;
+    width: 36px;
+    height: 28px;
+    margin: 7px 0 0 3px;
+    background: url("../images/player_bg.png") no-repeat -147px 0;
+}
+#control #next-btn:hover{
+    background: url("../images/player_bg.png") no-repeat -147px -32px;
+}
+
+
+#control #way-list{
+    display: none;
+    position: absolute;
+    left: 130px;
+    bottom: 5px;
+    border-radius: 3px;
+    background: #383838;
+    width: 32px;
+    height: 88px;
+    padding: 5px 0;
+
+}
+#way-list li{
+    cursor: pointer;
+    width: 32px;
+    height: 22px;
+}
+#way-list #sx-play{
+     background: url("../images/player_bg.png") no-repeat -408px 0;
+ }
+#way-list #sx-play:hover{
+    background: url("../images/player_bg.png") no-repeat -408px -22px;
+}
+#way-list #sj-play{
+    background: url("../images/player_bg.png") no-repeat -408px -44px;
+}
+#way-list #sj-play:hover{
+    background: url("../images/player_bg.png") no-repeat -408px -66px;
+}
+#way-list #dq-play{
+    background: url("../images/player_bg.png") no-repeat -376px -0px;
+}
+#way-list #dq-play:hover{
+    background: url("../images/player_bg.png") no-repeat -376px -22px;
+}
+#way-list #lb-play{
+    background: url("../images/player_bg.png") no-repeat -376px -44px;
+}
+#way-list #lb-play:hover{
+    background: url("../images/player_bg.png") no-repeat -376px -66px;
+}
+
+
+#control #play-way{
+    cursor: pointer;
+    width: 36px;
+    height: 28px;
+    margin: 7px 0 0 3px;
+}
+#control #play-way.way-sx{
+    background: url("../images/player_bg.png") no-repeat -291px -32px;
+}
+#control #play-way.way-sx:hover{
+    background: url("../images/player_bg.png") no-repeat -291px -60px;
+}
+#control #play-way.way-sj{
+    background: url("../images/player_bg.png") no-repeat -327px -32px;
+}
+#control #play-way.way-sj:hover{
+    background: url("../images/player_bg.png") no-repeat -327px -60px;
+}
+#control #play-way.way-dq{
+    background: url("../images/player_bg.png") no-repeat -255px 0;
+}
+#control #play-way.way-dq:hover{
+    background: url("../images/player_bg.png") no-repeat -255px -32px;
+}
+#control #play-way.way-lb{
+    background: url("../images/player_bg.png") no-repeat -219px 0;
+}
+#control #play-way.way-lb:hover{
+    background: url("../images/player_bg.png") no-repeat -219px -32px;
+}
+
+
+#control #volume-ctrl{
+    cursor: default;
+    width: 100px;
+    height: 24px;
+    margin: 10px 0 0 8px;
+}
+#volume-ctrl #vol-btn{
+    width: 24px;
+    height: 24px;
+}
+#volume-ctrl .normal{
+    background: url("../images/player_bg.png") no-repeat -189px -3px;
+}
+#volume-ctrl .normal:hover{
+    background: url("../images/player_bg.png") no-repeat -189px -35px;
+}
+#volume-ctrl .mute{
+    background: url("../images/player_bg.png") no-repeat -152px -63px;
+}
+#volume-ctrl .mute:hover{
+    background: url("../images/player_bg.png") no-repeat -189px -63px;
+}
+#volume-ctrl #vol-ctrl{
+    background: url("../images/player_bg.png") no-repeat -291px -11px;
+    position: relative;
+    top:0;
+    left: 0;
+    margin: 6px 0 0 2px;
+    width: 71px;
+    height: 11px;
+}
+#volume-ctrl #vol-dot{
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 6px;
+    height: 11px;
+    background: url("../images/player_bg.png") no-repeat -366px 0;
+}
+#volume-ctrl #vol-bar{
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/player_bg.png") no-repeat -291px 0;
+}
+
+#player #lyricSwitch{
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+#player #lyricSwitch.enabled{
+    background: url("../images/player_bg.png") no-repeat -475px 0;
+}
+#player #lyricSwitch.disabled{
+    background: url("../images/player_bg.png") no-repeat -452px 0;
+}
+#player #listSwitch{
+    cursor: pointer;
+    width: 47px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 39px;
+    background: url("../images/player_bg.png") no-repeat -222px -97px;
+}
+#player #listSwitch span{
+    display: inline-block;
+    font-size: 11px;
+    line-height: 28px;
+    text-align: center;
+    width: 24px;
+    height: 28px;
+    margin-left: 23px;
+}
+
+#player #play-control{
+    cursor:pointer;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #323232;
+}
+#play-control #play-dot{
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 7px;
+    height: 6px;
+    margin-left: -7px;
+    background: url('../images/progress_op.png') no-repeat;
+}
+#play-control #play-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #0cc65b;
+}
+
+#player-ui #fold{
+    z-index: 4;
+    position: absolute;
+    left: 540px;
+    bottom: 0;
+    width: 22px;
+    height: 115px;
+    background: #333;
+    cursor: pointer;
+    background: url("../images/player_bg.png") no-repeat -23px 0;
+}
+#fold.leftAllow{
+    background: url("../images/player_bg.png") no-repeat 0 0!important;
+}
+#fold.playingAllow{
+    background: url("../images/player_bg.png") no-repeat -46px 0!important;
+}
+#player-ui #lyric{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 248px;
+    height: 115px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 3px;
+}
+#lyric #lyric-text{
+    padding: 10px;
+    width: 228px;
+    height: 95px;
+    overflow: hidden;
+}
+#lyric #lyric-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background: url("../images/player_bg.png") no-repeat -503px 0;
+    cursor: pointer;
+}

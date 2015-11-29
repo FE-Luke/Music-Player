@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./stylesheets/base.css"/>
+    <script src="./scripts/base.js"></script>
+</head>
+<body>
+    <audio src="" id="audio"></audio>
+    <div id="player-ui">
+        <div id="play-list">
+            <div id="list-title">
+                <span id="tab">播放列表<i></i></span>
+                <span id="close-list"></span>
+                <span id="clear-list">清空列表</span>
+            </div>
+            <div id="list-main"></div>
+        </div>
+        <div id="player">
+            <div id="artist-img"><img src="./images/cover_mine_130.jpg"/></div>
+            <div id="song-info">
+                <div id="info-main">
+                    <ul id="m-info">
+                        <li>QQ音乐,音乐你的生活 <a href="javascript:void(0)" id="radio"></a></li>
+                        <li>QQ音乐</li>
+                        <li></li>
+                        <li>
+                            <span id="like-btn"></span>
+                            <span id="share-btn"></span>
+                            <span id="kok-btn"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="control">
+                    <span id="prev-btn"></span>
+                    <span id="play-btn" class="play"></span>
+                    <span id="next-btn"></span>
+                    <ul id="way-list">
+                        <li id="sj-play" title="随机播放" mode="sj"></li>
+                        <li id="dq-play" title="单曲循环" mode="dq"></li>
+                        <li id="lb-play" title="列表循环" mode="lb"></li>
+                        <li id="sx-play" title="顺序播放" mode="sx"></li>
+                    </ul>
+                    <span id="play-way" class="way-sx"></span>
+                    <span id="volume-ctrl">
+                        <span id="vol-btn" class="normal"></span>
+                        <span id="vol-ctrl">
+                            <span id="vol-dot"></span>
+                            <span id="vol-bar" style="width: 100%"></span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <span id="lyricSwitch" class="disabled"></span>
+            <span id="listSwitch">
+                <span>10</span>
+            </span>
+            <span id="play-control">
+                <span id="play-bar" style="width: 0%"></span>
+                <span id="play-dot"></span>
+            </span>
+        </div>
+        <div id="fold" class="rightAllow"></div>
+        <div id="lyric">
+            <div id="lyric-text"></div>
+            <div id="lyric-close"></div>
+        </div>
+    </div>
+</body>
+</html>
